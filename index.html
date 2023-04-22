@@ -1,97 +1,151 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Personal Page</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex布局</title>
     <style>
       body {
         margin: 0;
+        height: 100vh;
+        background-color: #ccc;
       }
-      img{
-         border-radius: 50%;
+      /* * {
+        border: 1px solid black;
+      } */
+      .yinying {
+        box-shadow: rgb(0, 0, 0 / 20%) 0px 2px 1px -1px,
+          rgb(0, 0, 0 / 14%) 0px 1px 1px 9px, rgb(0, 0, 0 / 12%) 0px 1px 3px 0px;
+      }
+      .flex {
+        display: flex;
+      }
+      .baiSe {
+        background-color: white;
+      }
+      .flex1 {
+        flex: 1;
+      }
+      .column {
+        flex-direction: column;
+      }
+      .mg8 {
+        margin: 8px;
+      }
+      .mgr8 {
+        margin-right: 8px;
+      }
+      .mgt8 {
+        margin-top: 8px;
+      }
+      .daohang {
+        padding: 30px 20px;
+        border-bottom: 1px solid rgb(190, 190, 190);
+        font-size: 14px;
+        color: #666;
+        margin-right: 10px;
+        border-bottom-right-radius: 10px;
+      }
+      /* 当屏幕宽度小于600px时要改变的css */
+      @media (max-width: 600px) {
+        .ceBian {
+          display: none;
+        }
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        .youQu {
+          margin-left: 8px;
+        }
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
       }
     </style>
   </head>
-  <body>
-    <div style="background-color: #f1f1f1; text-align: center; padding: 40px">
-      <img
-        src="./webheadimage.jpg"
-        alt="jiaqingshan"
-        width="80px"
-        height="80px"
-      />
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div style="width: 200px; z-index: 2" class="ceBian baiSe yinying">
+      <div class="flex">
+        <div
+          style="
+            padding: 10px;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #999;
+          "
+        >
+          <img
+            src="./icon.png"
+            width="40px"
+            height="40px"
+            alt="index"
+            title="网络楼台亭阁"
+          />
+        </div>
+        <div style="margin-left: 10px; margin-top: auto; margin-bottom: auto">
+          贾庆山
+        </div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="daohang">导航1</div>
+        <div class="daohang">导航2</div>
+        <div class="daohang">导航3</div>
+        <div class="daohang">导航4</div>
+        <div class="daohang">导航5</div>
+      </div>
     </div>
-    <div style="text-align:center"><h1>物流公司招聘：</h1>
-    <ul  style="text-align:center"><li>1.装卸工两名，吃苦耐劳，勤快能干。</li>
-      <li>2.工作地址在青州。每天工作10-12小时，月薪5000-6000元。</li>
-      <li>3.单据打印一名，女性，每天工作10个小时，月薪3000到5000元</li>
-        <li>4.管吃住。</li>
-      <li>5.联系电话：15206989赵先生</li>
-    <ul>
-    </div>
-    <div
-      style="
-        max-width: 700px;
-        margin: 5px auto;
-        padding: 15px;
-        line-height: 1.7;
-      "
-    >
-      <ul>
-        几个常用的快捷键
-        <li>ctrl+d 选中相同的字符，便于修改字符</li>
-        <li>按住alt，可以同时添加多个光标</li>
-        <li>ctrl+s保存，ctrl+z撤销</li>
-        <li>alt+shift+上或下键，可以快速复制一行至上或下一行</li>
-        <li>ctrl+f 是查找的意思，同时也可以替换</li>
-        <li>外观设计，可以多视察同时编程，上下和左右多视窗编辑。</li>
-        <li>
-          编辑器布局前期先不要动，有默认的这些就可以了，以免修改了不合适，又不易恢复，也可以用鼠标点击使用。
-        </li>
-        <li>
-          首选项中有个键盘快捷方式，里面保存着全部的快捷方式，可以查询，修改，也可以重置，非常方便，康老师说这个先不用看，
-        </li>
-        <li>帮助里面有教程，可以看看，学习官方的教程</li>
-        <li>f1可以打开设置，这里面有非常多的设置,也可以按字符搜索</li>
-        <li>
-          要想vscode支持良好，文件名最好是英文，查询搜索起来比较论高论高方便
-        </li>
-      </ul>
-    </div>
-    <div
-      style="
-        max-width: 700px;
-        margin: 5px auto;
-        padding: 15px;
-        line-height: 1.7;
-      "
-    >
-      <p>
-        我现在供职于山东嘉诚国新企业管理有限公司，公司主要从事国有企业改制，国有产权、股权及资产进场交易一条龙服务，是山东产权交易中心资深会员单位，五星级经纪类会员单位。
-      </p>
-      <p>
-        在B站看到康老师的视频后,反思学校里学习过程，课程设置及教学方式，深刻体会，感触颇深。于是乎，又重新燃起了写小程序的念头。
-      </p>
-      <p>
-        希望我这次能坚持下去，有生之年能做出自己的像样的产品出来，先满足自用，然后再做产品。
-      </p>
-      <p style="text-decoration: underline red">
-        好的教育是用简单的方式去教学，差的教育是用难的方式去灌输。<br />编程的本质是处理数据和函数，启发思维，启迪人生。
-      </p>
-    </div>
-    <div
-      style="
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 40px;
-        font-size: 12px;
-      "
-    >
-      <a href="./me.html">跳转到me页</a>
-      <p>友情链接</p>
-      <a href="https://kangwenchang.com">软件达人培训基地</a><br /><br />
-      <a href="http://www.sdcqjy.com/">山东产权交易中心</a>
+    <!-- 主区域 -->
+    <div class="flex1 flex column">
+      <!-- 头部栏 -->
+      <div style="height: 60px; z-index: 1" class="baiSe yinying">
+        这里是li列表菜单
+      </div>
+      <!-- 内容区 -->
+      <div style="overflow: auto" class="neiRong flex1 flex">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="shuJuQu flex">
+            <!-- 数据块 -->
+            <div style="height: 100px" class="shuJu flex1 baiSe yinying mgr8">
+              数据块1
+            </div>
+            <div style="height: 100px" class="shuJu flex1 baiSe yinying mgr8">
+              数据块2
+            </div>
+            <div style="height: 100px" class="shuJu flex1 baiSe yinying mgr8">
+              数据块3
+            </div>
+            <div style="height: 100px" class="shuJu flex1 baiSe yinying mgr8">
+              数据块4
+            </div>
+          </div>
+          <!-- 列表区 -->
+          <div class="flex column">
+            <!-- 列表项 -->
+            <div style="height: 160px" class="baiSe yinying mgt8">列表项1</div>
+            <div style="height: 160px" class="baiSe yinying mgt8">列表项2</div>
+            <div style="height: 160px" class="baiSe yinying mgt8">列表项3</div>
+            <div style="height: 160px" class="baiSe yinying mgt8">列表项4</div>
+            <div style="height: 160px" class="baiSe yinying mgt8">列表项5</div>
+            <div style="height: 160px" class="baiSe yinying mgt8">列表项6</div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="youQu flex column mgr8 mgt8">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baiSe yinying">提示区</div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="baiSe yinying mgt8">消息区</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
